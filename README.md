@@ -59,9 +59,8 @@
 
 ## Development version
 
-This branch prepares unreleased v0.0.22. It is not on npm yet
-(`package.json` is marked `private`); run it from a checkout until the
-suite's first lockstep release ships it.
+This branch prepares unreleased v0.0.22. It is not on npm yet; run it from a
+checkout until the suite's first lockstep release ships it.
 
 ---
 
@@ -83,7 +82,7 @@ node bin/jspassgen-lsp.js    # the server, on stdio
 ```
 
 The run-time dependencies are `vscode-languageserver` 11.0.0 and
-`@sebastienrousseau/jspassgen` 0.0.20, both pinned to exact versions.
+`@sebastienrousseau/jspassgen` 0.0.21, both pinned to exact versions.
 The server does not call jspassgen yet.
 
 ---

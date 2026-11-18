@@ -19,7 +19,7 @@ is published yet.
   exits on `exit` (status 0 after `shutdown`, 1 without it). It
   advertises no capabilities yet; the weak-secret diagnostics and the
   replace-with-generated code action are not built.
-- `@sebastienrousseau/jspassgen` 0.0.20 as a run-time dependency, pinned
+- `@sebastienrousseau/jspassgen` 0.0.21 as a run-time dependency, pinned
   exactly. The server does not call it yet.
 - Tests that spawn the server and exchange the handshake over JSON-RPC,
   at 100% coverage; `examples/handshake.js` and the README demo rendered
