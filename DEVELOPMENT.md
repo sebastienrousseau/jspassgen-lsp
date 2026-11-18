@@ -53,16 +53,28 @@ yet; ESLint has no rule for it.
 
 ## Release model
 
-There is no release workflow yet; it arrives with the first suite
-release. The intended model, as in the other suite members:
+`.github/workflows/release.yml` releases a pushed `v<version>` tag. The
+first release is the suite's first lockstep version, 0.0.22.
 
 1. On `feat/v<version>`: move the version in `package.json` and its
-   restatements, date the `CHANGELOG.md` heading, and remove
-   `"private": true` for the first publication.
-2. Merge the release pull request into `main` once CI is green.
-3. Tag `main` with a signed annotated tag:
-   `git tag -s v<version> -m "jspassgen-lsp v<version>"`, and push it.
-4. A release workflow checks the tag, runs the gate, packs the tarball,
-   writes `SHA256SUMS`, creates the GitHub release titled
-   `jspassgen-lsp <version>`, and publishes to npm with trusted
-   publishing.
+   restatements, and date the `CHANGELOG.md` heading. Merge the release
+   pull request into `main` once CI is green.
+2. Tag `main` with a signed annotated tag, check it with
+   `git verify-tag v<version>` (`KEYS.asc`), and push it:
+   `git tag -s v<version> -m "jspassgen-lsp v<version>"`.
+3. The `check` job refuses a tag that is not annotated, not signed, not
+   on the checked-out commit, or whose message or version does not match
+   `package.json`. It runs `make check` and `make audit`, packs the
+   tarball with `npm pack`, and writes `SHA256SUMS`. CI cannot verify the
+   signature itself; step 2 does.
+4. The `publish-npm` job waits for a maintainer to approve the `npm`
+   environment, then publishes that tarball to npmjs with provenance
+   through npm trusted publishing; no npm token is stored. A version
+   already on npmjs is skipped.
+5. The `github-release` job drafts the GitHub release
+   `jspassgen-lsp <version>` with the tarball and `SHA256SUMS`. The maintainer
+   writes the Highlights and publishes the draft.
+
+Trusted publishing is configured on npmjs per package: the trusted
+publisher names this repository, `release.yml` and the `npm`
+environment.
