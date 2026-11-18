@@ -11,13 +11,13 @@
 
 ## Supported versions
 
-Nothing is released yet; `0.0.22` is the planned first release, in
-lockstep with the jspassgen suite. While pre-`1.0`, the latest released
-`0.0.x` will be supported; older ones will not.
+The latest release is `0.0.22`, the first, in lockstep with the
+jspassgen suite. While pre-`1.0`, the latest released `0.0.x` is
+supported; older ones are not.
 
 | Version | Status | Supported |
 | :--- | :--- | :--- |
-| `0.0.22` | Planned, unreleased | Not yet released |
+| `0.0.22` | Latest release | Yes |
 | `main` | In development | Yes |
 
 ## Questions and bugs

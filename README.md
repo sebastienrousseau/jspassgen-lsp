@@ -12,7 +12,7 @@
 
 <p align="center">
   <a href="https://github.com/sebastienrousseau/jspassgen-lsp/actions"><img src="https://img.shields.io/github/actions/workflow/status/sebastienrousseau/jspassgen-lsp/ci.yml?style=for-the-badge&logo=github" alt="Build" height="28" /></a>
-  <a href="https://www.npmjs.com/package/@sebastienrousseau/jspassgen-lsp"><img src="https://img.shields.io/badge/npm-not%20published%20yet-lightgrey?style=for-the-badge&color=fc8d62&logo=npm" alt="npm: not published yet" height="28" /></a>
+  <a href="https://www.npmjs.com/package/@sebastienrousseau/jspassgen-lsp"><img src="https://img.shields.io/npm/v/@sebastienrousseau/jspassgen-lsp?style=for-the-badge&color=fc8d62&logo=npm" alt="Registry" height="28" /></a>
   <a href="https://github.com/sebastienrousseau/jspassgen-lsp/tree/main/docs"><img src="https://img.shields.io/badge/docs-repository-blue?style=for-the-badge&labelColor=555555&logo=readthedocs" alt="Docs" height="28" /></a>
   <a href="https://scorecard.dev/viewer/?uri=github.com/sebastienrousseau/jspassgen-lsp"><img src="https://img.shields.io/ossf-scorecard/github.com/sebastienrousseau/jspassgen-lsp?style=for-the-badge&label=OpenSSF%20Scorecard&logo=openssf" alt="OpenSSF Scorecard" height="28" /></a>
   <a href="LICENSE-APACHE"><img src="https://img.shields.io/badge/license-Apache--2.0%20OR%20MIT-blue.svg?style=for-the-badge" alt="License: Apache-2.0 OR MIT" height="28" /></a>
@@ -29,7 +29,7 @@
 
 **Getting started**
 
-- [Install](#install): from a checkout; not on npm yet
+- [Install](#install): npm, a global command, or a checkout
 - [Requirements](#requirements): Node.js floor, platforms, an LSP client
 - [Quick Start](#quick-start): run the handshake against the server
 
@@ -57,13 +57,6 @@
 
 ---
 
-## Development version
-
-This branch prepares unreleased v0.0.22. It is not on npm yet; run it from a
-checkout until the suite's first lockstep release ships it.
-
----
-
 ## Install
 
 ### As a JavaScript library
@@ -71,8 +64,14 @@ checkout until the suite's first lockstep release ships it.
 The package is mainly the `jspassgen-lsp` executable, a server an editor
 starts. Its module entry point, `src/server.js`, exports `attach`,
 `initializeResult` and `SERVER_INFO` for wiring the server onto your own
-`vscode-languageserver` connection. Until it is on npm, run it from a
-clone:
+`vscode-languageserver` connection.
+
+```bash
+npm install @sebastienrousseau/jspassgen-lsp      # the module
+npm install -g @sebastienrousseau/jspassgen-lsp   # the jspassgen-lsp command
+```
+
+Or run it from a clone:
 
 ```bash
 git clone https://github.com/sebastienrousseau/jspassgen-lsp.git
@@ -82,7 +81,7 @@ node bin/jspassgen-lsp.js    # the server, on stdio
 ```
 
 The run-time dependencies are `vscode-languageserver` 11.0.0 and
-`@sebastienrousseau/jspassgen` 0.0.21, both pinned to exact versions.
+`@sebastienrousseau/jspassgen` 0.0.22, both pinned to exact versions.
 The server does not call jspassgen yet.
 
 ---
@@ -146,10 +145,11 @@ conformance kit as its generators land.
 | [`jspassgen-sdk-cpp`](https://github.com/sebastienrousseau/jspassgen-sdk-cpp) | Native C++17 port on the OS CSPRNG | C++ programs |
 | [`jspassgen.github.io`](https://github.com/sebastienrousseau/jspassgen.github.io) | Source of [jspassgen.com](https://jspassgen.com) | Evaluating the suite |
 
-Only `@sebastienrousseau/jspassgen` is on a package registry so far
-(0.0.21 on npm). The table gives each member's purpose; the other members
-are early, each README's Capabilities at a glance says what works today,
-and they first publish with the suite's first lockstep release.
+Every member ships at 0.0.22, the suite's first lockstep release: the
+core, CLI, MCP and LSP servers on npm, the Python, Rust, Java and .NET
+SDKs on PyPI, crates.io, Maven Central and NuGet, and the C++ SDK and
+the site as GitHub releases. The table gives each member's purpose, and
+each README's Capabilities at a glance says what works today.
 
 ---
 

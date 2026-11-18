@@ -6,10 +6,9 @@ All notable changes to this project are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions
 advance in `0.0.1` steps in lockstep with the jspassgen suite.
 
-## [0.0.22] - Unreleased
+## [0.0.22] - 2026-11-18
 
-The planned first release, in lockstep with the jspassgen suite. Nothing
-is published yet.
+The first release, in lockstep with the jspassgen suite.
 
 ### Added
 
@@ -19,7 +18,7 @@ is published yet.
   exits on `exit` (status 0 after `shutdown`, 1 without it). It
   advertises no capabilities yet; the weak-secret diagnostics and the
   replace-with-generated code action are not built.
-- `@sebastienrousseau/jspassgen` 0.0.21 as a run-time dependency, pinned
+- `@sebastienrousseau/jspassgen` 0.0.22 as a run-time dependency, pinned
   exactly. The server does not call it yet.
 - Tests that spawn the server and exchange the handshake over JSON-RPC,
   at 100% coverage; `examples/handshake.js` and the README demo rendered
