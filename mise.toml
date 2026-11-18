@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+#
+# Pinned toolchain: `mise install` provides it. The Node.js floor is 22
+# (package.json engines); 24 is the development version, and CI tests 22
+# and 24.
+[tools]
+node = "24"

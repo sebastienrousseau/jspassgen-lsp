@@ -1,0 +1,27 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+cff-version: 1.2.0
+message: "If you use jspassgen-lsp in research or production write-ups, please cite it as below."
+type: software
+title: "jspassgen-lsp: a language server for weak literal secrets"
+abstract: >-
+  The language server of the jspassgen suite. It is planned to report
+  weak or low-entropy literal secrets in configuration and .env files,
+  with a code action that replaces one with a value generated locally by
+  jspassgen. The current version completes the LSP handshake only.
+authors:
+  - family-names: Rousseau
+    given-names: Sebastien
+version: "0.0.22"
+# Dual-licensed, at the user's option (LICENSE-APACHE, LICENSE-MIT).
+license:
+  - Apache-2.0
+  - MIT
+repository-code: "https://github.com/sebastienrousseau/jspassgen-lsp"
+keywords:
+  - language-server
+  - lsp
+  - password
+  - secrets
+  - dotenv
+  - entropy
+  - JavaScript

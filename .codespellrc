@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+#
+# codespell (docs-lint workflow). Skipped: dependencies, coverage output,
+# licence texts, the lock file and the demo GIF.
+[codespell]
+skip = ./.git,./node_modules,./coverage,./LICENSES,./package-lock.json,./.github/demo.gif
+check-hidden = true
