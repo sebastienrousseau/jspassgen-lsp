@@ -65,11 +65,21 @@ export class LspProcess {
     }
   }
 
-  /** Sends a request and resolves with the matching response. */
+  /**
+   * Sends a request and resolves with the matching response. Rejects if
+   * the server exits first, with its exit status and stderr, so a crash
+   * is reported as such rather than as a test timeout.
+   */
   request(id, method, params) {
     const response = new Promise((resolve) => this.pending.set(id, resolve));
+    const crashed = this.exited.then(({ code, signal }) => {
+      throw new Error(
+        `server exited (code ${code}, signal ${signal}) before answering ` +
+          `${method}; stderr: ${this.stderr}`,
+      );
+    });
     this.child.stdin.write(frame({ jsonrpc: "2.0", id, method, params }));
-    return response;
+    return Promise.race([response, crashed]);
   }
 
   /** Sends a notification. */
