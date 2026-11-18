@@ -9,3 +9,6 @@ coverage/
 .vscode/
 .idea/
 .DS_Store
+# bin/ holds the server's executable, which is source: re-include it in
+# case a global ignore file excludes bin/ directories.
+!/bin/
