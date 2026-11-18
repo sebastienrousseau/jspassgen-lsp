@@ -19,22 +19,20 @@ readme="${1:-README.md}"
 
 title=$(sed -n 's|^<h1 align="center">\([^<]*\)</h1>$|\1|p' "$readme" | head -1)
 [ -n "$title" ] || { echo "readme-check: no <h1 align=\"center\">name</h1>" >&2; exit 1; }
-suite="jspassgen"
-project="jspassgen-lsp"
 
 expected=$(cat <<LIST
 Contents
 Install
 Requirements
 Quick Start
-The $suite ecosystem
+The jspassgen ecosystem
 Capabilities at a glance
 Ecosystem comparison
 Benchmarks
 Features
 Configuration
 Examples
-When not to use $project
+When not to use $title
 Development
 Security
 Documentation
@@ -44,7 +42,10 @@ LIST
 )
 
 outside_code=$(awk '/^[[:space:]]*(```|~~~)/ { fence = !fence; next } !fence' "$readme")
-actual=$(sed -n 's/^## //p' <<< "$outside_code")
+# "Development version" (noyalib's form) may follow Contents while the
+# manifest version is unreleased; it goes when that version ships.
+actual=$(sed -n 's/^## //p' <<< "$outside_code" |
+  awk 'NR == 2 && $0 == "Development version" { next } { print }')
 if [ "$actual" != "$expected" ]; then
   echo "readme-check: second-level headings differ from the template:" >&2
   diff <(echo "$expected") <(echo "$actual") >&2 || true
