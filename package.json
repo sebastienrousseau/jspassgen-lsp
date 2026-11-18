@@ -1,8 +1,7 @@
 {
   "name": "@sebastienrousseau/jspassgen-lsp",
   "version": "0.0.22",
-  "private": true,
-  "description": "Language server for the jspassgen suite: will flag weak literal secrets in configuration and .env files. Planned, not yet released.",
+  "description": "Language server for the jspassgen suite: completes the LSP handshake today; flagging weak literal secrets in configuration and .env files is planned.",
   "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
   "license": "Apache-2.0 OR MIT",
   "homepage": "https://github.com/sebastienrousseau/jspassgen-lsp#readme",
@@ -38,7 +37,7 @@
     "versions": "node scripts/verify-versions.js"
   },
   "dependencies": {
-    "@sebastienrousseau/jspassgen": "0.0.20",
+    "@sebastienrousseau/jspassgen": "0.0.22",
     "vscode-languageserver": "11.0.0"
   },
   "devDependencies": {
