@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+# Prose is checked by markdownlint; the lock file is npm's; licence texts
+# and coverage output are not ours to format.
+*.md
+package-lock.json
+coverage/
+LICENSES/

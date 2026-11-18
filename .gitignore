@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+# Dependencies and npm output
+node_modules/
+*.tgz
+npm-debug.log*
+# Test coverage (c8)
+coverage/
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store

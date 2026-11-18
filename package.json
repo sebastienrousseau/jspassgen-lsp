@@ -1,0 +1,90 @@
+{
+  "name": "@sebastienrousseau/jspassgen-lsp",
+  "version": "0.0.22",
+  "private": true,
+  "description": "Language server for the jspassgen suite: will flag weak literal secrets in configuration and .env files. Planned, not yet released.",
+  "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
+  "license": "Apache-2.0 OR MIT",
+  "homepage": "https://github.com/sebastienrousseau/jspassgen-lsp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastienrousseau/jspassgen-lsp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sebastienrousseau/jspassgen-lsp/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "bin": {
+    "jspassgen-lsp": "bin/jspassgen-lsp.js"
+  },
+  "exports": {
+    ".": "./src/server.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "LICENSE-APACHE",
+    "LICENSE-MIT"
+  ],
+  "scripts": {
+    "test": "c8 mocha",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "versions": "node scripts/verify-versions.js"
+  },
+  "dependencies": {
+    "@sebastienrousseau/jspassgen": "0.0.20",
+    "vscode-languageserver": "11.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "c8": "12.0.0",
+    "chai": "6.3.0",
+    "eslint": "10.15.0",
+    "eslint-plugin-sonarjs": "4.2.2",
+    "globals": "17.14.0",
+    "mocha": "12.0.3",
+    "prettier": "3.10.1"
+  },
+  "overrides": {
+    "glob": "^14.0.2",
+    "minimatch": "^11.0.1"
+  },
+  "mocha": {
+    "spec": [
+      "test/**/*.test.js"
+    ],
+    "timeout": 10000,
+    "exit": true
+  },
+  "c8": {
+    "all": true,
+    "include": [
+      "src/**",
+      "bin/**"
+    ],
+    "reporter": [
+      "text",
+      "lcov"
+    ],
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100,
+    "statements": 100
+  },
+  "keywords": [
+    "lsp",
+    "language-server",
+    "password",
+    "secrets",
+    "dotenv",
+    "entropy",
+    "jspassgen"
+  ]
+}

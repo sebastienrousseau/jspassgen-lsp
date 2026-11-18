@@ -1,0 +1,30 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+name: Feature Request
+description: Suggest an enhancement for jspassgen-lsp
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The server has no generation logic: a new way to generate or
+        score a secret usually starts in
+        https://github.com/sebastienrousseau/jspassgen.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+    validations:
+      required: true
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Real-World Use Case
+    validations:
+      required: true

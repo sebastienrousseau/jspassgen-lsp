@@ -1,0 +1,40 @@
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+name: Bug Report
+description: Report a reproducible problem in jspassgen-lsp
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Issues are public. Use synthetic secrets only: never a real
+        password, token or key. Report security problems privately, as
+        SECURITY.md describes.
+  - type: input
+    id: version
+    attributes:
+      label: jspassgen-lsp version or commit
+      placeholder: "0.0.22"
+    validations:
+      required: true
+  - type: input
+    id: toolchain
+    attributes:
+      label: Node.js version, editor and LSP client
+      placeholder: "Node.js 24.11.0, Neovim 0.11 built-in client"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal Reproducible Example
+      description: The file content (synthetic secrets only) and the LSP messages, if you have them.
+    validations:
+      required: true
