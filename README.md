@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sebastienrousseau/jspassgen-lsp/main/.github/demo.gif" alt="node examples/handshake.js: the example starts the server on stdio, sends initialize and receives the server info jspassgen-lsp 0.0.22, then sends initialized, shutdown (result null) and exit, and the server exits with status 0" width="100%" />
+  <img src="https://raw.githubusercontent.com/sebastienrousseau/jspassgen-lsp/main/.github/demo.gif" alt="node examples/handshake.js: the example starts the server on stdio, sends initialize and receives the server info jspassgen-lsp 0.0.23, then sends initialized, shutdown (result null) and exit, and the server exits with status 0" width="100%" />
 </p>
 
 ---
@@ -81,7 +81,7 @@ node bin/jspassgen-lsp.js    # the server, on stdio
 ```
 
 The run-time dependencies are `vscode-languageserver` 11.0.0 and
-`@sebastienrousseau/jspassgen` 0.0.22, both pinned to exact versions.
+`@sebastienrousseau/jspassgen` 0.0.23, both pinned to exact versions.
 The server does not call jspassgen yet.
 
 ---
@@ -106,7 +106,7 @@ node examples/handshake.js
 
 ```text
 -> initialize
-<- result {"capabilities":{"textDocumentSync":0},"serverInfo":{"name":"jspassgen-lsp","version":"0.0.22"}}
+<- result {"capabilities":{"textDocumentSync":0},"serverInfo":{"name":"jspassgen-lsp","version":"0.0.23"}}
 -> initialized
 -> shutdown
 <- result null
@@ -145,7 +145,7 @@ conformance kit as its generators land.
 | [`jspassgen-sdk-cpp`](https://github.com/sebastienrousseau/jspassgen-sdk-cpp) | Native C++17 port on the OS CSPRNG | C++ programs |
 | [`jspassgen.github.io`](https://github.com/sebastienrousseau/jspassgen.github.io) | Source of [jspassgen.com](https://jspassgen.com) | Evaluating the suite |
 
-Every member ships at 0.0.22, the suite's first lockstep release: the
+Every member ships at 0.0.23, the suite's second lockstep release: the
 core, CLI, MCP and LSP servers on npm, the Python, Rust, Java and .NET
 SDKs on PyPI, crates.io, Maven Central and NuGet, and the C++ SDK and
 the site as GitHub releases. The table gives each member's purpose, and
