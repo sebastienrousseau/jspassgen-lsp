@@ -81,7 +81,7 @@ node bin/jspassgen-lsp.js    # the server, on stdio
 ```
 
 The run-time dependencies are `vscode-languageserver` 11.0.0 and
-`@sebastienrousseau/jspassgen` 0.0.22, both pinned to exact versions.
+`@sebastienrousseau/jspassgen` 0.0.23, both pinned to exact versions.
 The server does not call jspassgen yet.
 
 ---

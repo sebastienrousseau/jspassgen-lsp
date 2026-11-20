@@ -29,9 +29,8 @@ is unchanged: it still completes the LSP handshake only.
 
 - `SECURITY.md` and `SUPPORT.md` name 0.0.23 as the supported release.
 - The README demo is re-rendered for the new version.
-
-The run-time dependency stays at `@sebastienrousseau/jspassgen` 0.0.22:
-jspassgen 0.0.23 is not published yet.
+- The run-time dependency `@sebastienrousseau/jspassgen` moves to
+  0.0.23, still pinned exactly. The server does not call it yet.
 
 ## [0.0.22] - 2026-11-18
 

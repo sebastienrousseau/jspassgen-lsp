@@ -37,7 +37,7 @@
     "versions": "node scripts/verify-versions.js"
   },
   "dependencies": {
-    "@sebastienrousseau/jspassgen": "0.0.22",
+    "@sebastienrousseau/jspassgen": "0.0.23",
     "vscode-languageserver": "11.0.0"
   },
   "devDependencies": {
