@@ -6,6 +6,33 @@ All notable changes to this project are recorded here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions
 advance in `0.0.1` steps in lockstep with the jspassgen suite.
 
+## [0.0.23] - Unreleased
+
+In lockstep with the jspassgen suite's 0.0.23. The server's behaviour
+is unchanged: it still completes the LSP handshake only.
+
+### Added
+
+- Property-based tests with fast-check 4.10.2 (pinned exactly, as in
+  jspassgen and the CLI), in `test/server.property.test.js`. They drive
+  the server's handlers in process with generated JSON-RPC traffic cut
+  into arbitrary chunks: any `initialize` gets one answer with its id
+  and the server info, a synthetic secret in the params never appears
+  in what the server writes, an unknown method is refused with
+  MethodNotFound without ending the session, and an `initialize` result
+  cannot be mutated into the next. OpenSSF Scorecard's Fuzzing check
+  detects the fast-check import.
+- `.github/CODEOWNERS`, naming the maintainer as the owner of every
+  file.
+
+### Changed
+
+- `SECURITY.md` and `SUPPORT.md` name 0.0.23 as the supported release.
+- The README demo is re-rendered for the new version.
+
+The run-time dependency stays at `@sebastienrousseau/jspassgen` 0.0.22:
+jspassgen 0.0.23 is not published yet.
+
 ## [0.0.22] - 2026-11-18
 
 The first release, in lockstep with the jspassgen suite.
