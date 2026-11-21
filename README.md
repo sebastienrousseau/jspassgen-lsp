@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/sebastienrousseau/jspassgen-lsp/main/.github/demo.gif" alt="node examples/handshake.js: the example starts the server on stdio, sends initialize and receives the server info jspassgen-lsp 0.0.24, then sends initialized, shutdown (result null) and exit, and the server exits with status 0" width="100%" />
+  <img src="https://raw.githubusercontent.com/sebastienrousseau/jspassgen-lsp/main/.github/demo.gif" alt="node examples/handshake.js: the example starts the server on stdio, sends initialize and receives the server info jspassgen-lsp 0.0.25, then sends initialized, shutdown (result null) and exit, and the server exits with status 0" width="100%" />
 </p>
 
 ---
@@ -106,7 +106,7 @@ node examples/handshake.js
 
 ```text
 -> initialize
-<- result {"capabilities":{"textDocumentSync":0},"serverInfo":{"name":"jspassgen-lsp","version":"0.0.24"}}
+<- result {"capabilities":{"textDocumentSync":0},"serverInfo":{"name":"jspassgen-lsp","version":"0.0.25"}}
 -> initialized
 -> shutdown
 <- result null

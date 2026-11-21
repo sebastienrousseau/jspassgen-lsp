@@ -1,6 +1,6 @@
 {
   "name": "@sebastienrousseau/jspassgen-lsp",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "Language server for the jspassgen suite: completes the LSP handshake today; flagging weak literal secrets in configuration and .env files is planned.",
   "author": "Sebastien Rousseau <sebastienrousseau@users.noreply.github.com>",
   "license": "Apache-2.0 OR MIT",
