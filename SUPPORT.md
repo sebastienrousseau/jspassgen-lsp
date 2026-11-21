@@ -11,13 +11,14 @@
 
 ## Supported versions
 
-The latest release is `0.0.23`, in lockstep with the
+The latest release is `0.0.24`, in lockstep with the
 jspassgen suite. While pre-`1.0`, the latest released `0.0.x` is
 supported; older ones are not.
 
 | Version | Status | Supported |
 | :--- | :--- | :--- |
-| `0.0.23` | Latest release | Yes |
+| `0.0.24` | Latest release | Yes |
+| `0.0.23` | Superseded | No |
 | `0.0.22` | Superseded | No |
 | `main` | In development | Yes |
 
